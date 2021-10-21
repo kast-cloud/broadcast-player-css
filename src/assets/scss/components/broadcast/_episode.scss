@@ -1,0 +1,149 @@
+.kc-episode-item {
+    display: grid;
+    grid-template-columns: max-content auto;
+    column-gap: rem-calc(16);
+    padding-top: rem-calc(16);
+    padding-bottom: rem-calc(16);
+    border-top: 1px solid rgba(126, 146, 160, 0.2);
+    font-size: rem-calc(12);
+
+    &:hover, &:focus
+    {
+        background-color: #f4f7f7;
+        cursor: pointer;
+    }
+
+    &:first-child {
+        border-top: none;
+    }
+
+    &__title {
+        @extend .h3;
+        font-size: rem-calc(16);
+        margin-bottom: rem-calc(2);
+    }
+    &__author {
+        color: $darker-gray;
+
+        dd + dt + dd {
+            &::before {
+                content: "·";
+                font-size: 150%;
+                vertical-align: middle;
+                position: relative;
+                top: -0.1em;
+                line-height: 0;
+                margin: 0 0.25rem;
+            }
+        }
+    }
+    &__release
+    {
+        font-weight: $header-font-weight;
+
+        .kl-dt-separator
+        {
+            text-transform: uppercase;
+        }
+    }
+    &__info
+    {
+        @include flex;
+        @include flex-align(justify, center);
+        margin-top: rem-calc(6);
+        dd, dt
+        {
+            margin-bottom: 0;
+        }
+    }
+    &__txt
+    {
+        @include flex;
+        @include flex-align(center, null);
+        @include flex-direction(column);
+    }
+
+    &__img {
+        width: rem-calc(114);
+        border-radius: $button-radius;
+    }
+    i
+    {
+        position: relative;
+        top: 1px;
+        display: inline-block;
+    }
+}
+
+// Table structure
+.kc-episode-sum {
+    border: none;
+    thead,
+    tbody,
+    tfoot {
+        border: none;
+    }
+    tr {
+        border-top: 1px solid rgba(126, 146, 160, 0.2);
+
+        &:first-child {
+            border-top: none;
+        }
+
+        &,
+        &:nth-child(2n) {
+            background-color: transparent;
+        }
+
+        &:hover,
+        &:focus {
+            background-color: #f4f7f7;
+            cursor: pointer;
+        }
+    }
+    thead {
+        @include element-invisible;
+    }
+    td,
+    th {
+        padding: rem-calc(16 24);
+        font-size: rem-calc(12);
+
+        &:first-child {
+            padding-left: 0;
+            padding-right: rem-calc(4);
+        }
+    }
+    td {
+        color: $darker-gray;
+        width: 0.1%;
+        white-space: nowrap;
+
+        &.kc-episode-sum__num {
+            color: $medium-gray;
+        }
+        &.kc-episode-sum__title {
+            font-size: rem-calc(14);
+            color: $header-color;
+            font-weight: $header-font-weight;
+            width: auto;
+            white-space: normal;
+        }
+    }
+}
+.kc-episode-list
+{
+    display: grid;
+    grid-gap: rem-calc(24);
+    grid-template-columns: 3fr 9fr;
+
+    &__hdg
+    {
+        @extend .kc-wdg__hdg;
+        margin-bottom: rem-calc(10);
+    }
+    &__sub-hdg
+    {
+        font-size: rem-calc(14);
+    }
+}

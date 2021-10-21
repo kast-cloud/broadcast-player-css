@@ -1,0 +1,53 @@
+<article class="kc-series-item">
+    <header class="kc-series-item__hdr">
+        <img src="https://placeimg.com/400/400/people" alt="Faith Lives Here" class="kc-series-item__img">
+        <div class="kc-series-item__txt">
+            <h1 class="kc-series-item__title">Faith Lives Here</h1>
+            <dl class="ko-keyvalue ko-keyvalue--value-only ko-keyvalue--inline kc-series-item__info">
+                <dt>Episodes in series</dt>
+                <dd>
+                    <i class="ki-info"></i> 5 episodes (complete)
+                </dd>
+                <dt>Total time</dt>
+                <dd>
+                    <i class="ki-clock"></i> 3h 35min
+                </dd>
+                <dt>Listened</dt>
+                <dd>
+                    <i class="ki-headphones"></i><span class="show-for-sr">no</span>
+                </dd>
+            </dl>
+            <p>Series summary a quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            <a href="#" class="ko-more">Learn more <i class="ki-chevron-alt-right"></i></a>
+        </div>
+    </header>
+    <div class="kc-series-item__bdy">
+        <table class="kc-episode-sum">
+            <thead>
+                <tr>
+                    <th>
+                        Episode number
+                    </th>
+                    <th>
+                        Title / Author
+                    </th>
+                    <th>
+                        Recorded on
+                    </th>
+                    <th>
+                        Duration
+                    </th>
+                    <th>
+                        Listened
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each episodes }}
+                {{> episode-sum}}
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</article>

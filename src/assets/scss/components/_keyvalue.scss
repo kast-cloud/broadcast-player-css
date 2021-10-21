@@ -1,0 +1,24 @@
+@mixin kast-keyvalue {
+  .ko-keyvalue {
+    margin-bottom: 0;
+    margin-top: 0;
+
+    &--value-only {
+      dt {
+        @include element-invisible;
+      }
+    }
+    
+    &--inline
+    {
+      dt,dd
+      {
+        display: inline-block;
+      }
+    }
+
+    dd {
+      margin: 0 0 $global-margin * 0.5;
+    }
+  }
+}

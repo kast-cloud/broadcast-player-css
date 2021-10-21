@@ -1,0 +1,30 @@
+.kl-episodes
+{
+    margin-top: rem-calc(48);
+    margin-bottom: rem-calc(40);
+    display: grid;
+    column-gap: rem-calc(24);
+    row-gap: rem-calc(48);
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+
+
+    &__latest
+    {
+        grid-column: 1 / span 4 ;
+    }
+    &__series
+    {
+        grid-column: 5 / -1;
+    }
+    &__subscribe
+    {
+        grid-column: 1 / -1;
+        grid-row: 2;
+    }
+    &__all
+    {
+        grid-column: 1 / -1;
+        grid-row: 3;
+    }
+}

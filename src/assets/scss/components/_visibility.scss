@@ -1,0 +1,83 @@
+@mixin kast-visibility {
+    // Basic hiding classes
+    .ku-hide {
+      display: none !important;
+    }
+  
+    .ku-invisible {
+      visibility: hidden;
+    }
+  
+    // Responsive visibility classes
+    @each $size in $breakpoint-classes {
+      @if $size != $-zf-zero-breakpoint {
+        .ku-hide-for-#{$size} {
+          @include hide-for($size);
+        }
+  
+        .ku-show-for-#{$size} {
+          @include show-for($size);
+        }
+      }
+  
+      .ku-hide-for-#{$size}-only {
+        @include hide-for-only($size);
+      }
+  
+      .ku-show-for-#{$size}-only {
+        @include show-for-only($size);
+      }
+    }
+  
+    // Screen reader visibility classes
+    // Need a "hide-for-sr" class? Add aria-hidden='true' to the element
+    .ku-show-sr,
+    .ku-show-focus {
+      @include element-invisible;
+    }
+  
+    // Only display the element when it's focused
+    .ku-show-focus {
+      &:active,
+      &:focus {
+        @include element-invisible-off;
+      }
+    }
+  
+    // Landscape and portrait visibility
+    .ku-show-landscape,
+    .ku-hide-portrait {
+      display: block !important;
+  
+      @include breakpoint(landscape) {
+        display: block !important;
+      }
+  
+      @include breakpoint(portrait) {
+        display: none !important;
+      }
+    }
+  
+    .ku-hide-landscape,
+    .ku-show-portrait {
+      display: none !important;
+  
+      @include breakpoint(landscape) {
+        display: none !important;
+      }
+  
+      @include breakpoint(portrait) {
+        display: block !important;
+      }
+    }
+
+    .ku-fl-only
+    {
+      text-indent:-9999px;
+      
+      &::first-letter
+      {
+        text-indent: 9999px;
+      }
+    }
+  }

@@ -1,0 +1,53 @@
+.kc-wdg--latest-series
+{
+    border: 1px solid rgba(126, 146, 160, 0.2);
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.375rem 0 rgba(7, 40, 53, 0.15);
+    padding: rem-calc(37 40);
+}
+.kc-series-item
+{
+    &__hdr
+    {
+        display: grid;
+        grid-template-columns: max-content auto;
+        column-gap: rem-calc(32);
+        margin-bottom: rem-calc(8);
+
+        p
+        {
+            font-size: rem-calc(14);
+        }
+    }
+    &__txt
+    {
+        @include flex;
+        @include flex-align(center, null);
+        @include flex-direction(column);
+    }
+
+    &__img
+    {
+        width: rem-calc(200);
+        border-radius: $button-radius;
+    }
+    &__info
+    {
+        font-size: rem-calc(12);
+        color: #5B5956;
+
+        dd
+        {
+            margin-right: rem-calc(18);
+        }
+
+        i
+        {
+            position: relative;
+            top: 1px;
+            display: inline-block;
+            margin-right: rem-calc(2);
+        }
+    }
+    
+}

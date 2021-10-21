@@ -1,0 +1,19 @@
+.kc-series-list
+{
+    .kc-series-item
+    {
+        border: 1px solid rgba(126, 146, 160, 0.2);
+        border-radius: 0.5rem;
+        padding: rem-calc(32 32 16);
+        margin-bottom: rem-calc(24);
+
+        &__img
+        {
+            width: rem-calc(100);
+        }
+        &__title
+        {
+            @extend .h4;
+        }
+    }
+}

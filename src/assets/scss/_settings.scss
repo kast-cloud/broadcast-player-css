@@ -65,31 +65,40 @@
 // 1. Global
 // ---------
 
+$kast-green: #00B3BA;
+$kast-dark-navy: #072835;
+$kast-blue: #005E99;
+$kast-white: #E9F0EF;
+$kast-overlay-green: #00ADBB;
+$icomoon-font-family: "kast-icons" !default;
+$icomoon-font-path: "../fonts" !default;
+
 $global-font-size: 100%;
-$global-width: rem-calc(1200);
+$global-width: rem-calc(1336);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #1779ba,
-  secondary: #767676,
+  primary: $kast-green,
+  secondary: $kast-dark-navy,
   success: #3adb76,
   warning: #ffae00,
   alert: #cc4b37,
 );
-$light-gray: #e6e6e6;
-$medium-gray: #cacaca;
-$dark-gray: #8a8a8a;
-$black: #0a0a0a;
-$white: #fefefe;
-$body-background: $white;
-$body-font-color: $black;
-$body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
-$body-safe-padding: false;
+$lighter-gray: #f4f7f7;
+$light-gray: $kast-white;
+$medium-gray: #BBC9C7;
+$dark-gray: #768281;
+$darker-gray: #7E92A0;
+$black: #231F20;
+$white: #FFFFFF;
+$body-background: $kast-white;
+$body-font-color: $dark-gray;
+$body-font-family: inherit;
 $body-antialiased: true;
-$global-margin: 1rem;
-$global-padding: 1rem;
+$global-margin: rem-calc(12);
+$global-padding: rem-calc(12);
 $global-position: 1rem;
-$global-weight-normal: normal;
-$global-weight-bold: bold;
+$global-weight-normal: 400;
+$global-weight-bold: 700;
 $global-radius: 0;
 $global-menu-padding: 0.7rem 1rem;
 $global-menu-nested-margin: 1rem;
@@ -139,36 +148,36 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: $body-font-family;
-$header-font-weight: $global-weight-normal;
+$header-font-family: var(--header-font-family, inherit);
+$header-font-weight: var(--header-font-weight, bold);
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
-$header-color: inherit;
-$header-lineheight: 1.4;
-$header-margin-bottom: 0.5rem;
+$header-color: var(--header-color, #072835);
+$header-lineheight: 1.2;
+$header-margin-bottom: rem-calc(8);
 $header-styles: (
   small: (
     'h1': ('font-size': 24),
-    'h2': ('font-size': 20),
+    'h2': ('font-size': 22),
     'h3': ('font-size': 19),
     'h4': ('font-size': 18),
     'h5': ('font-size': 17),
     'h6': ('font-size': 16),
   ),
   medium: (
-    'h1': ('font-size': 48),
-    'h2': ('font-size': 40),
-    'h3': ('font-size': 31),
-    'h4': ('font-size': 25),
-    'h5': ('font-size': 20),
-    'h6': ('font-size': 16),
+    'h1': ('font-size': 28),
+    'h2': ('font-size': 24),
+    'h3': ('font-size': 22),
+    'h4': ('font-size': 19),
+    'h5': ('font-size': 18),
+    'h6': ('font-size': 17),
   ),
 );
 $header-text-rendering: optimizeLegibility;
 $small-font-size: 80%;
 $header-small-font-color: $medium-gray;
-$paragraph-lineheight: 1.6;
-$paragraph-margin-bottom: 1rem;
+$paragraph-lineheight: $global-lineheight;
+$paragraph-margin-bottom: rem-calc(12);
 $paragraph-text-rendering: optimizeLegibility;
 $enable-code-inline: true;
 $anchor-color: $primary-color;
@@ -176,8 +185,8 @@ $anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
 $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
 $hr-width: $global-width;
-$hr-border: 1px solid $medium-gray;
-$hr-margin: rem-calc(20) auto;
+$hr-border: 1px solid $kast-white;
+$hr-margin: rem-calc(19) auto rem-calc(12);
 $list-lineheight: $paragraph-lineheight;
 $list-margin-bottom: $paragraph-margin-bottom;
 $list-style-type: disc;
@@ -230,7 +239,7 @@ $input-background-invalid: get-color(alert);
 $form-label-color-invalid: get-color(alert);
 $input-error-color: get-color(alert);
 $input-error-font-size: rem-calc(12);
-$input-error-font-weight: $global-weight-bold;
+$input-error-font-weight: $header-font-weight;
 
 // 7. Accordion
 // ------------
@@ -264,7 +273,7 @@ $accordionmenu-submenu-toggle-width: 40px;
 $accordionmenu-submenu-toggle-height: $accordionmenu-submenu-toggle-width;
 $accordionmenu-arrow-size: 6px;
 
-// 9. Badge
+// 9. Badge 
 // --------
 
 $badge-background: $primary-color;
@@ -294,25 +303,25 @@ $breadcrumbs-item-separator-color: $medium-gray;
 // ----------
 
 $button-font-family: inherit;
-$button-font-weight: null;
-$button-padding: 0.85em 1em;
+$button-font-weight: var(--button-font-weight, bold);
+$button-padding: 0.8em 2em;
 $button-margin: 0 0 $global-margin 0;
 $button-fill: solid;
 $button-background: $primary-color;
 $button-background-hover: scale-color($button-background, $lightness: -15%);
 $button-color: $white;
 $button-color-alt: $black;
-$button-radius: $global-radius;
+$button-radius: var(--button-radius, 0.25rem);
 $button-border: 1px solid transparent;
 $button-hollow-border-width: 1px;
 $button-sizes: (
   tiny: 0.6rem,
   small: 0.75rem,
-  default: 0.9rem,
-  large: 1.25rem,
+  default: 0.875rem,
+  large: 1rem,
 );
 $button-palette: $foundation-palette;
-$button-opacity-disabled: 0.25;
+$button-opacity-disabled: 0.75;
 $button-background-hover-lightness: -20%;
 $button-hollow-hover-lightness: -50%;
 $button-transition: background-color 0.25s ease-out, color 0.25s ease-out;
@@ -352,7 +361,7 @@ $card-font-color: $body-font-color;
 $card-divider-background: $light-gray;
 $card-border: 1px solid $light-gray;
 $card-shadow: none;
-$card-border-radius: $global-radius;
+$card-border-radius: rem-calc(8);
 $card-padding: $global-padding;
 $card-margin-bottom: $global-margin;
 
@@ -443,44 +452,46 @@ $helptext-font-style: italic;
 $input-prefix-color: $black;
 $input-prefix-background: $light-gray;
 $input-prefix-border: 1px solid $medium-gray;
-$input-prefix-padding: 1rem;
-$form-label-color: $black;
+$input-prefix-padding: rem-calc(14);
+$form-label-color: $kast-dark-navy;
 $form-label-font-size: rem-calc(14);
-$form-label-font-weight: $global-weight-normal;
-$form-label-line-height: 1.8;
+$form-label-font-weight: $header-font-weight;
+$form-label-line-height: 19/14;
 $select-background: $white;
 $select-triangle-color: $dark-gray;
 $select-radius: $global-radius;
-$input-color: $black;
-$input-placeholder-color: $medium-gray;
+$input-color: $kast-dark-navy;
+$input-placeholder-color: $dark-gray;
 $input-font-family: inherit;
 $input-font-size: rem-calc(16);
 $input-font-weight: $global-weight-normal;
-$input-line-height: $global-lineheight;
+$input-line-height: 21/16;
 $input-background: $white;
 $input-background-focus: $white;
 $input-background-disabled: $light-gray;
 $input-border: 1px solid $medium-gray;
 $input-border-focus: 1px solid $dark-gray;
-$input-padding: $form-spacing * 0.5;
-$input-shadow: inset 0 1px 2px rgba($black, 0.1);
+$input-padding: ($form-spacing * 0.75) $form-spacing;
+$input-shadow: none;
 $input-shadow-focus: 0 0 5px $medium-gray;
 $input-cursor-disabled: not-allowed;
 $input-transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
 $input-number-spinners: true;
-$input-radius: $global-radius;
+$input-radius: var(--input-radius, rem-calc(4));
 $form-button-radius: $global-radius;
+
+$input-margin-top: rem-calc(6);
 
 // 21. Label
 // ---------
 
-$label-background: $primary-color;
+$label-background: $medium-gray;
 $label-color: $white;
 $label-color-alt: $black;
 $label-palette: $foundation-palette;
 $label-font-size: 0.8rem;
 $label-padding: 0.33333rem 0.5rem;
-$label-radius: $global-radius;
+$label-radius: rem-calc(4);
 
 // 22. Media Object
 // ----------------
@@ -747,21 +758,23 @@ $prototype-text-overflow: ellipsis;
 
 $responsive-embed-margin-bottom: rem-calc(16);
 $responsive-embed-ratios: (
-  default: 4 by 3,
-  widescreen: 16 by 9,
+  default: 16 by 9,
+  square: 1 by 1,
+  relic: 4 by 3
 );
 
 // 47. Reveal
 // ----------
 
 $reveal-background: $white;
-$reveal-width: 600px;
-$reveal-max-width: $global-width;
-$reveal-padding: $global-padding;
-$reveal-border: 1px solid $medium-gray;
-$reveal-radius: $global-radius;
-$reveal-zindex: 1005;
-$reveal-overlay-background: rgba($black, 0.45);
+$reveal-width: rem-calc(600);
+$reveal-max-width: rem-calc(600);
+$reveal-padding: 0;
+$reveal-border: 0;
+$reveal-radius: rem-calc(8);
+$reveal-zindex: 10020;
+$reveal-overlay-background: rgba(0, 0, 0, 0.35);
+$reveal-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.29);
 
 // 48. Slider
 // ----------
@@ -830,7 +843,7 @@ $tab-item-background-hover: $white;
 $tab-item-padding: 1.25rem 1.5rem;
 $tab-content-background: $white;
 $tab-content-border: $light-gray;
-$tab-content-color: $body-font-color;
+$tab-content-color: inherit;
 $tab-content-padding: 1rem;
 
 // 52. Thumbnail
@@ -886,11 +899,29 @@ $xy-grid: true;
 $grid-container: $global-width;
 $grid-columns: 12;
 $grid-margin-gutters: (
-  small: 20px,
-  medium: 30px
+  small: 24px,
+  medium: 24px
+);
+$grid-container-gutters: (
+  small: 24px,
+  medium: 56px
 );
 $grid-padding-gutters: $grid-margin-gutters;
-$grid-container-padding: $grid-padding-gutters;
+$grid-container-padding: $grid-container-gutters;
 $grid-container-max: $global-width;
 $xy-block-grid-max: 8;
 
+// 57. Kast icon codes
+// -----------
+
+$ki-kast-symbol: "\e900";
+$ki-check: "\e901";
+$ki-check-alt: "\e902";
+$ki-chevron-left: "\e903";
+$ki-chevron-right: "\e904";
+$ki-magnify: "\e905";
+$ki-marker: "\e906";
+$ki-facebook: "\f39e";
+$ki-instagram: "\f16d";
+$ki-spotify: "\f1bc";
+$ki-twitter: "\f099";

@@ -1,0 +1,94 @@
+$podcast-info-gutters: (
+    small: 24px,
+    medium: 24px,
+);
+
+.kc-podcast-info {
+    display: grid;
+    grid-template-columns: max-content auto auto;
+    column-gap: rem-calc(24);
+    padding-top: rem-calc(40);
+    padding-bottom: rem-calc(40);
+    border-bottom: 1px solid rgba(126, 146, 160, 0.2);
+
+    &__img {
+        border-radius: $button-radius;
+        width: rem-calc(72);
+    }
+    &__cell--txt {
+        @include flex;
+        @include flex-align(center, null);
+        @include flex-direction(column);
+        max-height: rem-calc(72);
+    }
+    &__cell--dir {
+        text-align: right;
+    }
+    &__title {
+        @extend .h3;
+        margin-bottom: rem-calc(3);
+    }
+    &__author {
+        font-size: rem-calc(14);
+    }
+    &__btn {
+        @include button($background: #000, $background-hover: rgba(0, 0, 0, 0.85), $color: $white);
+        font-size: rem-calc(18);
+        padding-top: rem-calc(10);
+        padding-bottom: rem-calc(10);
+        margin-left: rem-calc(8);
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+    &__btn--img {
+        @extend .kc-podcast-info__btn;
+        transition: opacity 0.25s ease-out;
+        border: none;
+        padding: 0;
+
+        img {
+            border-radius: $button-radius;
+            height: rem-calc(40);
+            width: auto;
+        }
+
+        &:hover {
+            opacity: 0.85;
+        }
+    }
+    &__btn--rss
+    {
+        padding-left: rem-calc(15);
+        padding-right: rem-calc(15);
+        
+        [class^="ki-"], [class*=" ki-"]
+        {
+            font-size: 86%;
+            color: #EF8321;
+            margin-right: rem-calc(8);
+        }
+    }
+    &__help {
+        font-size: rem-calc(14);
+        color: $medium-gray;
+
+        [class^="ki-"], [class*=" ki-"]
+        {
+            font-size: 86%;
+            margin-right: rem-calc(3);
+            display: inline-block;
+        }
+
+        a {
+            color: $medium-gray;
+
+            &:hover,
+            &:focus {
+                color: $darker-gray;
+                text-decoration: underline;
+            }
+        }
+    }
+}

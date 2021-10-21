@@ -1,0 +1,268 @@
+$icomoon-font-family: "kast-icons" !default;
+$icomoon-font-path: "../fonts" !default;
+
+$ki-download: "\e91f";
+$ki-clock: "\e920";
+$ki-headphones: "\e921";
+$ki-rss: "\e91e";
+$ki-info: "\e90a";
+$ki-question: "\e90b";
+$ki-arrow-left: "\e907";
+$ki-arrow-right: "\e908";
+$ki-check-admin: "\e912";
+$ki-check-circ: "\e909";
+$ki-check-circ-solid: "\e90c";
+$ki-chevron-alt-down: "\e90d";
+$ki-chevron-alt-left: "\e913";
+$ki-chevron-alt-right: "\e914";
+$ki-chevron-alt-up: "\e90e";
+$ki-ellipse: "\e90f";
+$ki-ellipse-vert: "\e915";
+$ki-groups: "\e910";
+$ki-refresh: "\e911";
+$ki-connect: "\e91d";
+$ki-close: "\e91c";
+$ki-repeat: "\e984";
+$ki-prayer: "\e916";
+$ki-share: "\e917";
+$ki-bell: "\e918";
+$ki-calendar: "\e919";
+$ki-give: "\e91a";
+$ki-email: "\e91b";
+$ki-check: "\e901";
+$ki-check-alt: "\e902";
+$ki-chevron-left: "\e903";
+$ki-chevron-right: "\e904";
+$ki-magnify: "\e905";
+$ki-marker: "\e906";
+$ki-kast-symbol: "\e900";
+$ki-facebook: "\f39e";
+$ki-instagram: "\f16d";
+$ki-spotify: "\f1bc";
+$ki-twitter: "\f099";
+
+
+
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?yqhmtd');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?yqhmtd#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?yqhmtd') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?yqhmtd') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?yqhmtd##{$icomoon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="ki-"], [class*=" ki-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ki-download {
+  &:before {
+    content: $ki-download; 
+  }
+}
+.ki-clock {
+  &:before {
+    content: $ki-clock; 
+  }
+}
+.ki-headphones {
+  &:before {
+    content: $ki-headphones; 
+  }
+}
+.ki-rss {
+  &:before {
+    content: $ki-rss; 
+  }
+}
+.ki-info {
+  &:before {
+    content: $ki-info; 
+  }
+}
+.ki-question {
+  &:before {
+    content: $ki-question; 
+  }
+}
+.ki-arrow-left {
+  &:before {
+    content: $ki-arrow-left; 
+  }
+}
+.ki-arrow-right {
+  &:before {
+    content: $ki-arrow-right; 
+  }
+}
+.ki-check-admin {
+  &:before {
+    content: $ki-check-admin; 
+  }
+}
+.ki-check-circ {
+  &:before {
+    content: $ki-check-circ; 
+  }
+}
+.ki-check-circ-solid {
+  &:before {
+    content: $ki-check-circ-solid; 
+  }
+}
+.ki-chevron-alt-down {
+  &:before {
+    content: $ki-chevron-alt-down; 
+  }
+}
+.ki-chevron-alt-left {
+  &:before {
+    content: $ki-chevron-alt-left; 
+  }
+}
+.ki-chevron-alt-right {
+  &:before {
+    content: $ki-chevron-alt-right; 
+  }
+}
+.ki-chevron-alt-up {
+  &:before {
+    content: $ki-chevron-alt-up; 
+  }
+}
+.ki-ellipse {
+  &:before {
+    content: $ki-ellipse; 
+  }
+}
+.ki-ellipse-vert {
+  &:before {
+    content: $ki-ellipse-vert; 
+  }
+}
+.ki-groups {
+  &:before {
+    content: $ki-groups; 
+  }
+}
+.ki-refresh {
+  &:before {
+    content: $ki-refresh; 
+  }
+}
+.ki-connect {
+  &:before {
+    content: $ki-connect; 
+  }
+}
+.ki-close {
+  &:before {
+    content: $ki-close; 
+  }
+}
+.ki-repeat {
+  &:before {
+    content: $ki-repeat; 
+  }
+}
+.ki-prayer {
+  &:before {
+    content: $ki-prayer; 
+  }
+}
+.ki-share {
+  &:before {
+    content: $ki-share; 
+  }
+}
+.ki-bell {
+  &:before {
+    content: $ki-bell; 
+  }
+}
+.ki-calendar {
+  &:before {
+    content: $ki-calendar; 
+  }
+}
+.ki-give {
+  &:before {
+    content: $ki-give; 
+  }
+}
+.ki-email {
+  &:before {
+    content: $ki-email; 
+  }
+}
+.ki-check {
+  &:before {
+    content: $ki-check; 
+  }
+}
+.ki-check-alt {
+  &:before {
+    content: $ki-check-alt; 
+  }
+}
+.ki-chevron-left {
+  &:before {
+    content: $ki-chevron-left; 
+  }
+}
+.ki-chevron-right {
+  &:before {
+    content: $ki-chevron-right; 
+  }
+}
+.ki-magnify {
+  &:before {
+    content: $ki-magnify; 
+  }
+}
+.ki-marker {
+  &:before {
+    content: $ki-marker; 
+  }
+}
+.ki-kast-symbol {
+  &:before {
+    content: $ki-kast-symbol; 
+  }
+}
+.ki-facebook {
+  &:before {
+    content: $ki-facebook; 
+  }
+}
+.ki-instagram {
+  &:before {
+    content: $ki-instagram; 
+  }
+}
+.ki-spotify {
+  &:before {
+    content: $ki-spotify; 
+  }
+}
+.ki-twitter {
+  &:before {
+    content: $ki-twitter; 
+  }
+}
+

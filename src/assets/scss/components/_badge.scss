@@ -1,0 +1,27 @@
+@mixin kast-badge {
+  .ko-badge {
+    @include label;
+
+    background: $label-background;
+    color: $label-color;
+    text-transform: uppercase;
+
+    @each $name, $color in $label-palette {
+      &--#{$name} {
+        background: $color;
+        color: color-pick-contrast($color, ($label-color, $label-color-alt));
+      }
+    }
+    &--location {
+      background-color: rgba($kast-green, 0.2);
+      font-size: rem-calc(12);
+      padding: rem-calc(4 12);
+      color: $kast-green;
+      font-weight: 700;
+    }
+    &--light {
+      background-color: #eef2f1;
+      color: inherit;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+<article class="kc-episode-item">
+    <img src="{{ imageUrl }}" alt="{{ name }}" class="kc-episode-item__img">
+    <div class="kc-episode-item__txt">
+        <h1 class="kc-episode-item__title">{{ name }}</h1>
+        <dl class="ko-keyvalue ko-keyvalue--value-only ko-keyvalue--inline kc-episode-item__release">
+            <dt class="ku-show-sr">Released</dt>
+            <dd>
+                <time datetime="{{ date }} {{ time }}" class="ko-datetime">
+                    {{ date }} <span class="kl-dt-separator">{{ time }}</span></time>
+            </dd>
+        </dl>
+        <dl class="ko-keyvalue ko-keyvalue--value-only ko-keyvalue--inline kc-episode-item__author">
+            <dt class="ku-show-sr">Author</dt>
+            <dd>
+                {{ author }}
+            </dd>
+            <dt class="ku-show-sr">Series</dt>
+            <dd>
+                {{ series }}
+            </dd>
+        </dl>
+        <dl class="ko-keyvalue ko-keyvalue--value-only ko-keyvalue--inline kc-episode-item__info">
+            <dt class="ku-show-sr">Location</dt>
+            <dd>
+                <span class="ko-badge ko-badge--location">Kedron</span>
+            </dd>
+            <dt class="ku-show-sr">Duration</dt>
+            <dd>
+                <i class="ki-clock"></i> {{ duration }} min
+            </dd>
+        </dl>
+    </div>
+</article>

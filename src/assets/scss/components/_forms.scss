@@ -1,0 +1,228 @@
+@mixin kast-forms {
+  .kc-form {
+    + .kc-flow-pnl__actions {
+      margin-top: 0;
+    }
+  }
+
+  #{text-inputs()},
+  textarea,
+  .ko-switch,
+  .ko-input-fake,
+  select {
+    margin-top: $input-margin-top;
+  }
+  .ko-textarea-fake {
+    @extend textarea;
+    height: auto;
+  }
+  .ko-input-fake {
+    @extend [type="text"] !optional;
+  }
+
+  .ko-input-fake,
+  .ko-textarea-fake {
+    &--disabled {
+      $fake-color: #f4f7f7;
+      background-color: $fake-color;
+      border-color: $fake-color;
+    }
+  }
+
+  .ko-label {
+    @extend label;
+
+    &--required {
+      &::after {
+        content: " *";
+      }
+    }
+  }
+
+  .ko-label--error {
+    color: $form-label-color-invalid;
+  }
+  .ko-input--error {
+    @include form-input-error;
+  }
+  .ko-validation {
+    @include form-error;
+    display: block;
+  }
+  .kl-checkbox-wrp {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: $form-spacing;
+    line-height: $input-line-height;
+
+    [type="radio"],
+    [type="checkbox"] {
+      margin-bottom: 0;
+      margin-top: 3px;
+    }
+    label,
+    .ko-label {
+      display: block;
+    }
+  }
+  .ko-checkbox {
+    &--custom {
+      $chk-height: rem-calc(16);
+      @include element-invisible;
+
+      + label {
+        position: relative;
+        padding-left: rem-calc(24);
+        margin-bottom: $form-spacing;
+        margin-left: 0;
+        margin-right: 0;
+        line-height: $input-line-height;
+        cursor: pointer;
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          margin-top: (($form-label-font-size * $input-line-height)-$chk-height)*0.5;
+          @include box($chk-height);
+          border: $input-border;
+          text-align: center;
+        }
+      }
+      &:focus {
+        + label {
+          &::before {
+            border: $input-border-focus;
+            box-shadow: $input-shadow-focus;
+          }
+        }
+      }
+      &:checked {
+        + label {
+          //@include kast-icon($ki-check, rem-calc(12));
+
+          &::before {
+            border-color: $kast-blue;
+            background-color: $kast-blue;
+            color: $white;
+            padding-top: rem-calc(1);
+          }
+        }
+      }
+    }
+  }
+
+  .ko-multi-select,
+  .ko-single-select {
+    margin-bottom: rem-calc(20);
+
+    [type="radio"],
+    [type="checkbox"] {
+      @include element-invisible;
+    }
+    $label-height: rem-calc(38);
+    label {
+      display: inline-block;
+      text-align: center;
+      font-size: rem-calc(14);
+      line-height: 1;
+      vertical-align: middle;
+      font-weight: $global-weight-normal;
+      padding: rem-calc(12 20);
+      //height: $label-height;
+      @include border-rounded;
+      margin: rem-calc(0 6 12 0);
+      background: rgba(199, 213, 211, 0.35);
+      color: $kast-dark-navy;
+      transition: $button-transition;
+
+      &:hover,
+      &:active {
+        background: rgba(199, 213, 211, 0.55);
+      }
+    }
+    &--round label,
+    &--round label,
+    .ko-label--round {
+      padding-left: 0;
+      padding-right: 0;
+      min-width: $label-height;
+      //height: $label-height;
+    }
+
+    input:checked,
+    &--no-disable input:checked {
+      + label {
+        background: $kast-blue;
+        color: $white;
+      }
+    }
+    input:disabled {
+      + label {
+        cursor: not-allowed;
+      }
+    }
+    &:not(.ko-single-select--no-disable) input:disabled {
+      + label {
+        opacity: 0.45;
+      }
+    }
+  }
+
+  .ko-multi-select {
+    label {
+      position: relative;
+    }
+  }
+  .kc-input-group, .input-group
+  {
+    margin-top: $input-margin-top;
+
+    input
+    {
+      margin-top: 0;
+    }
+  }
+
+  .ko-multi-select {
+    input:checked {
+      + label {
+        padding-left: rem-calc(24);
+        padding-right: rem-calc(16);
+
+        //@include kast-icon($ki-check, rem-calc(12));
+
+        &::before {
+          position: absolute;
+          left: rem-calc(8);
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+
+  .ko-single-select--hdr {
+    label {
+      background: rgba(0, 0, 0, 0.05);
+      color: $body-font-color;
+
+      &:hover,
+      &:active {
+        background: rgba(0, 0, 0, 0.1);
+        color: $kast-dark-navy;
+      }
+    }
+    input:checked {
+      + label {
+        //background: $white;
+        //color: $kast-green;
+        font-weight: $global-weight-bold;
+      }
+    }
+  }
+}
+input:-moz-placeholder,
+input::-moz-placeholder {
+  opacity: 1;
+}

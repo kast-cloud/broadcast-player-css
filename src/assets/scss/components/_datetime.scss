@@ -1,0 +1,33 @@
+@mixin kast-datetime {
+    .ko-datetime {
+        &__time {
+            text-transform: uppercase;
+        }
+    }
+    .ko-freq {
+        // Removed because of issue in Kast Groups list UI
+        //display: inline-block;
+
+        &::first-letter {
+            text-transform: lowercase;
+        }
+    }
+    // depreciate kl-dt-separator
+    .kl-dot-after {
+        &::after {
+            content: "\00B7";
+            font-size: rem-calc(24);
+            vertical-align: middle;
+            position: relative;
+            top: -0.05em;
+            line-height: 0;
+            margin-left: rem-calc(4);
+        }
+    }
+    .kl-dt-separator {
+        &::before {
+            content: "/";
+            margin: 0 rem-calc(5 0 4);
+        }
+    }
+}

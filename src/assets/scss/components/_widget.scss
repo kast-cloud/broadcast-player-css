@@ -1,0 +1,12 @@
+.kc-wdg {
+    &__hdg {
+        text-transform: uppercase;
+        @extend .h6;
+        font-size: rem-calc(14);
+        margin-bottom: rem-calc(16);
+    }
+    &__sec--ftr
+    {
+        margin-top: rem-calc(16);
+    }
+}
