@@ -90,7 +90,7 @@ $dark-gray: #768281;
 $darker-gray: #7E92A0;
 $black: #231F20;
 $white: #FFFFFF;
-$body-background: $kast-white;
+$body-background: #fff;
 $body-font-color: $dark-gray;
 $body-font-family: inherit;
 $body-antialiased: true;
@@ -404,11 +404,11 @@ $drilldown-arrow-size: 6px;
 // ------------
 
 $dropdown-padding: 1rem;
-$dropdown-background: $body-background;
-$dropdown-border: 1px solid $medium-gray;
-$dropdown-font-size: 1rem;
-$dropdown-width: 300px;
-$dropdown-radius: $global-radius;
+$dropdown-background: $white;
+$dropdown-border: 1px solid rgba(109, 109, 109, 0.2);
+$dropdown-font-size: rem-calc(14);
+$dropdown-width: 200px;
+$dropdown-radius: 0.5rem;
 $dropdown-sizes: (
   tiny: 100px,
   small: 200px,
@@ -569,8 +569,8 @@ $orbit-control-zindex: 10;
 $pagination-font-size: rem-calc(14);
 $pagination-margin-bottom: $global-margin;
 $pagination-item-color: $black;
-$pagination-item-padding: rem-calc(3 10);
-$pagination-item-spacing: rem-calc(1);
+$pagination-item-padding: rem-calc(6 12);
+$pagination-item-spacing: rem-calc(4);
 $pagination-radius: $global-radius;
 $pagination-item-background-hover: $light-gray;
 $pagination-item-background-current: $primary-color;

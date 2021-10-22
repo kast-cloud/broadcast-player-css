@@ -1,0 +1,13 @@
+@mixin kast-fonts {
+    @font-face {
+        font-family: "#{$icomoon-font-family}";
+        src: url("#{$icomoon-font-path}/#{$icomoon-font-family}.eot?jpj6rv");
+        src: url("#{$icomoon-font-path}/#{$icomoon-font-family}.eot?jpj6rv#iefix") format("embedded-opentype"),
+            url("#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?jpj6rv") format("truetype"),
+            url("#{$icomoon-font-path}/#{$icomoon-font-family}.woff?jpj6rv") format("woff"),
+            url("#{$icomoon-font-path}/#{$icomoon-font-family}.svg?jpj6rv##{$icomoon-font-family}") format("svg");
+        font-weight: normal;
+        font-style: normal;
+        font-display: block;
+    }
+}

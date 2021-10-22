@@ -1,0 +1,79 @@
+.kc-search {
+    @include xy-grid;
+    @include flex-align(justify);
+    color: $kast-dark-navy;
+    margin-bottom: rem-calc(32);
+
+    .input-group {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    &__submit {
+        background-color: transparent;
+        border: $input-border;
+        border-right: 0;
+        color: $kast-green;
+        padding: $input-padding;
+        padding-top: 0;
+        padding-bottom: 0;
+        font-size: rem-calc(18);
+
+        &:hover, &:focus
+        {
+            background-color: transparent;
+            color: $kast-green;
+        }
+    }
+    .input-group-field {
+        border-left: 0;
+    }
+    &__cell {
+        @include xy-cell($size: shrink);
+
+        &:first-child {
+            margin-left: 0;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &--search {
+            @include xy-cell-base($size: auto);
+            max-width: 416px;
+        }
+    }
+
+    .ko-button {
+        margin-bottom: 0;
+        line-height: 21/16;
+        padding: $form-spacing * 0.75 1rem;
+        height: 2.75rem;
+    }
+    &__dropdown {
+        @include dropdown-container;
+        box-shadow: 0 0.125rem 0.375rem 0 rgba(7, 40, 53, 0.15);
+    }
+
+    .ko-button--view-type {
+        border-color: $kast-green;
+        background-color: transparent;
+        color: $kast-green;
+        margin-left: rem-calc(12);
+
+        &:hover, &:focus
+        {
+            color: #00989e;
+            border-color: #00989e;
+        }
+
+        @include kast-icon-after($code: $ki-chevron-alt-down, $font-size: rem-calc(12));
+        &::after {
+            margin-left: rem-calc(11);
+        }
+        &.hover {
+            border-color: $kast-green;
+            @include kast-icon-after($code: $ki-chevron-alt-up, $font-size: rem-calc(12));
+            color: #00989e;
+        }
+    }
+}

@@ -1,0 +1,67 @@
+.kc-pagination
+{
+    border-top: 1px solid rgba(126, 146, 160, 0.2);
+}
+.ko-pagination {
+    @include pagination-container;
+    border-top: 1px solid rgba(126, 146, 160, 0.2);
+    @include flex;
+    @include flex-align(center,null)
+  
+    > li
+    {
+      margin-top: -1px;
+    }
+  
+    a {
+      min-width: rem-calc(56);
+      text-align: center;
+      border-top: rem-calc(4) solid transparent;
+  
+      &:hover
+      {
+          border-top-color: $light-gray;
+      }
+    }
+  
+    &__current {
+      @include pagination-item-current;
+      border-top: rem-calc(4) solid $kast-green;
+      min-width: rem-calc(56);
+      text-align: center;
+    }
+  
+    .is-disabled {
+      @include pagination-item-disabled;
+      min-width: rem-calc(56);
+      text-align: center;
+    }
+  
+    &__ellipsis::after {
+      @include pagination-ellipsis;
+      min-width: rem-calc(56);
+      text-align: center;
+    }
+  
+    @if $pagination-arrows {
+        &__prev
+        {
+            @include flex-align-self(right);
+        }
+      &__prev a::before,
+      &__prev.is-disabled::before {
+        display: inline-block;
+        margin-#{$global-right}: 0.5rem;
+        content: $ki-chevron-alt-left;
+        font-family: "#{$icomoon-font-family}" !important;
+      }
+      &__next a::after,
+      &__next.disabled::after {
+        display: inline-block;
+        margin-#{$global-left}: 0.5rem;
+        content: $ki-chevron-alt-right;
+        font-family: "#{$icomoon-font-family}" !important;
+      }
+    }
+  }
+  

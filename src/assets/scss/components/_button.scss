@@ -66,8 +66,9 @@
       }
     }
 
+
     // Dropdown arrow
-    &.dropdown {
+    &--dropdown {
       @include button-dropdown;
 
       @if $button-fill == hollow {
@@ -81,6 +82,7 @@
           &::after {
             border-top-color: $button-background;
           }
+          @include kast-icon-after($ki-chevron-alt-down);
 
           @each $name, $color in $button-palette {
             &.#{$name} {
@@ -150,7 +152,7 @@
       padding-left: rem-calc(40);
       cursor: auto;
 
-      //@include kast-icon($ki-check);
+      @include kast-icon($ki-check);
 
       &::before {
         position: absolute;

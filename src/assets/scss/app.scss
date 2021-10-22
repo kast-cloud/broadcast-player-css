@@ -64,13 +64,16 @@
 @include motion-ui-animations;
 
 @import "global/typography";
+@import "components/icons";
+@include kast-icons;
+@import "global/fonts";
+@include kast-fonts;
 @import "components/forms";
 @include kast-forms;
 @import "components/visibility";
 @include kast-visibility;
 @import "components/button";
 @include kast-button;
-@import "components/icons";
 @import "components/keyvalue";
 @include kast-keyvalue;
 @import "components/datetime";
@@ -78,6 +81,7 @@
 @import "components/badge";
 @include kast-badge;
 @import "components/widget";
+@import "components/pagination";
 
 .kc-broadcast-app
 {
@@ -85,6 +89,7 @@
 }
 
 @import "components/broadcast/podcast-info";
+@import "components/broadcast/search-bar";
 @import "components/broadcast/subscribe";
 @import "components/broadcast/layout";
 @import "components/broadcast/latest-series";

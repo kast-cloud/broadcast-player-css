@@ -1,19 +1,55 @@
-.kc-series-list
-{
-    .kc-series-item
-    {
+.kc-series-list {
+    .kc-series-item {
         border: 1px solid rgba(126, 146, 160, 0.2);
         border-radius: 0.5rem;
         padding: rem-calc(32 32 16);
         margin-bottom: rem-calc(24);
 
-        &__img
-        {
+        &__img {
             width: rem-calc(100);
         }
-        &__title
-        {
+        &__title {
             @extend .h4;
         }
+    }
+}
+.kc-series-list--cards {
+    display: grid;
+    column-gap: rem-calc(30);
+    row-gap: rem-calc(40);
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: rem-calc(40);
+}
+
+.kc-series-card {
+    &:hover
+    {
+        cursor: pointer;
+    }
+    
+    &__title
+    {
+        @extend .h4;
+        margin-bottom: rem-calc(8);
+    }
+    &__img {
+        width: 100%;
+        border-radius: $button-radius;
+        margin-bottom: rem-calc(16);
+    }
+    &__sum
+    {
+         font-size: rem-calc(14);
+    }
+    &__info
+    {
+        @include flex;
+        @include flex-align(justify, middle);
+        dd, dt
+        {
+            margin-bottom: 0;
+        }
+        font-size: rem-calc(12);
+        color: #5B5956;
     }
 }

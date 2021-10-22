@@ -1,5 +1,5 @@
 <div class="kc-search">
-    <div class="kc-search__cell">
+    <div class="kc-search__cell--search">
         <form>
             <label for="episode-search" class="ko-label ku-show-sr">Search</label>
             <div class="input-group kc-search__input">
@@ -15,12 +15,12 @@
     </div>
     <div class="kc-search__cell">
         View by:
-        <button class="ko-button ko-button--dropdown ko-button--hollow" type="button" data-toggle="view-options">Series & episodes</button>
-        <div class="dropdown-pane" id="view-options" data-dropdown data-hover="true" data-hover-pane="true">
+        <button class="ko-button ko-button--view-type" type="button" data-toggle="view-options">{{ selection }}</button>
+        <div class="kc-search__dropdown" id="view-options" data-dropdown data-hover="false" data-close-on-click="true" data-v-offset=8 data-position="bottom" data-alignment="right" data-hover-pane="true">
             <ul class="vertical menu">
-                <li><a href="#">Series</a></li>
-                <li><a href="#">Series & episodes</a></li>
-                <li><a href="#">Episodes</a></li>
+                <li><a href="index.html">Series</a></li>
+                <li><a href="series-episodes.html">Series & episodes</a></li>
+                <li><a href="episodes.html">Episodes</a></li>
             </ul>
         </div>
     </div>
