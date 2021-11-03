@@ -1,67 +1,126 @@
-.kc-pagination
-{
-    border-top: 1px solid rgba(126, 146, 160, 0.2);
-}
 .ko-pagination {
-    @include pagination-container;
-    border-top: 1px solid rgba(126, 146, 160, 0.2);
-    @include flex;
-    @include flex-align(center,null)
-  
-    > li
-    {
-      margin-top: -1px;
-    }
-  
+  border-top: 1px solid rgba(126, 146, 160, 0.2);
+
+  &__list {
+    @include xy-grid(horizontal, true);
+    @include flex-align(center);
+    margin: 0;
+    list-style: none;
+  }
+  li {
+    @include xy-cell-base(shrink);
+    text-align: center;
+    margin: 0 rem-calc(4);
+    padding-top: rem-calc(8);
+    border-top: 3px solid transparent;
+  }
+  li#{&}__prev,
+  li#{&}__next {
+    @include xy-cell-base(auto);
+
     a {
-      min-width: rem-calc(56);
-      text-align: center;
-      border-top: rem-calc(4) solid transparent;
-  
-      &:hover
-      {
-          border-top-color: $light-gray;
+      padding-right: rem-calc(4);
+      padding-left: rem-calc(16);
+      color: $kast-green;
+
+      &::after {
+        margin-left: rem-calc(6);
+      }
+      &::before {
+        margin-right: rem-calc(6);
       }
     }
-  
-    &__current {
-      @include pagination-item-current;
-      border-top: rem-calc(4) solid $kast-green;
-      min-width: rem-calc(56);
-      text-align: center;
+    &.is-disabled {
+      color: $medium-gray;
+      padding-top: rem-calc(12);
     }
-  
-    .is-disabled {
-      @include pagination-item-disabled;
-      min-width: rem-calc(56);
-      text-align: center;
-    }
-  
-    &__ellipsis::after {
-      @include pagination-ellipsis;
-      min-width: rem-calc(56);
-      text-align: center;
-    }
-  
-    @if $pagination-arrows {
-        &__prev
-        {
-            @include flex-align-self(right);
-        }
-      &__prev a::before,
-      &__prev.is-disabled::before {
-        display: inline-block;
-        margin-#{$global-right}: 0.5rem;
-        content: $ki-chevron-alt-left;
-        font-family: "#{$icomoon-font-family}" !important;
-      }
-      &__next a::after,
-      &__next.disabled::after {
-        display: inline-block;
-        margin-#{$global-left}: 0.5rem;
-        content: $ki-chevron-alt-right;
-        font-family: "#{$icomoon-font-family}" !important;
+  }
+  li#{&}__prev {
+    text-align: left;
+
+    a,
+    &.is-disabled {
+      padding-right: rem-calc(16);
+      padding-left: rem-calc(4);
+      @include kast-icon($ki-chevron-alt-left, 80%);
+
+      &::before {
+        margin-right: rem-calc(6);
       }
     }
   }
-  
+  li#{&}__next {
+    text-align: right;
+
+    a,
+    &.is-disabled {
+      @include kast-icon-after($ki-chevron-alt-right, 80%);
+    }
+  }
+  a {
+    min-width: rem-calc(32);
+    padding: rem-calc(4 0);
+    text-align: center;
+    display: inline-block;
+    color: $header-color;
+
+    &:hover {
+      background-color: $light-gray;
+    }
+  }
+
+  li#{&}__current {
+    min-width: rem-calc(32);
+    padding: rem-calc(12 0 8);
+    border-top-color: $kast-green;
+    color: $kast-green;
+  }
+  &__ellipsis {
+    min-width: rem-calc(32);
+    padding: rem-calc(12 0 8);
+    color: $header-color;
+
+    &::after {
+      content: "\2026";
+    }
+  }
+
+  // &__current {
+  //   //@include pagination-item-current;
+  //   border-top: rem-calc(4) solid $kast-green;
+  //   min-width: rem-calc(56);
+  //   text-align: center;
+  // }
+
+  // .is-disabled {
+  //   @include pagination-item-disabled;
+  //   min-width: rem-calc(56);
+  //   text-align: center;
+  // }
+
+  // &__ellipsis::after {
+  //   @include pagination-ellipsis;
+  //   min-width: rem-calc(56);
+  //   text-align: center;
+  // }
+
+  // @if $pagination-arrows {
+  //   &__prev {
+  //     @include flex-align-self(right);
+  //   }
+  //   &__prev a::before,
+  //   &__prev.is-disabled::before {
+  //     display: inline-block;
+  //     margin-#{$global-right}: 0.5rem;
+  //     content: $ki-chevron-alt-left;
+  //     font-family: "#{$icomoon-font-family}" !important;
+  //   }
+  //   &__next a::after,
+  //   &__next.disabled::after {
+  //     display: inline-block;
+  //     margin-#{$global-left}: 0.5rem;
+  //     content: $ki-chevron-alt-right;
+  //     font-family: "#{$icomoon-font-family}" !important;
+  //   }
+  // }
+}

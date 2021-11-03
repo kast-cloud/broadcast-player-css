@@ -5,6 +5,10 @@
         padding: rem-calc(32 32 16);
         margin-bottom: rem-calc(24);
 
+        &__hdr {
+            column-gap: rem-calc(24);
+        }
+
         &__img {
             width: rem-calc(100);
         }
