@@ -2,8 +2,25 @@
 {
     font-size: rem-calc(14);
 
-    i
+    .ki-chevron-alt-right, .ki-chevron-alt-left
     {
         font-size: 64%;
+        margin-left: rem-calc(4);
+        top: 0;
+        transform: left .2s, right .2s;
+        position: relative;
+    }
+
+    &:hover,
+    &:focus
+    {
+        .ki-chevron-alt-right
+        {
+            left: 2px;
+        }
+        .ki-chevron-alt-left
+        {
+            right: 2px;
+        }
     }
 }

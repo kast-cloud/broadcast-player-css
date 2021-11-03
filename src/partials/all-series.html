@@ -1,15 +1,15 @@
-<div class="kc-episode-list">
-    <div class="kc-episode-list__hdr">
-        <h2 class="kc-episode-list__hdg">All series</h2>
-        <div class="kc-episode-list__sub-hdg">By City Lights Church</div>
+<div class="kc-broadcast-list">
+    <div class="kc-broadcast-list__hdr">
+        <h2 class="kc-broadcast-list__hdg">All series</h2>
+        <div class="kc-broadcast-list__sub-hdg">By City Lights Church</div>
     </div>
-    <div class="kc-episode-list__bdy">
+    <div class="kc-broadcast-list__bdy">
         {{> search-bar }}
-        <div class="kc-series-list kc-series-list--cards">
-        {{#repeat 6}}
-        {{> series-cards }}
-        {{/repeat}}
-        </div>
+        <ul class="kc-series-list kc-series-list--cards">
+            {{#repeat 6}}
+            <li>{{> series-cards }}</li>
+            {{/repeat}}
+        </ul>
         {{> pagination }}
     </div>
 </div>

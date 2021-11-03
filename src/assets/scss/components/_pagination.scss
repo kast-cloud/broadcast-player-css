@@ -1,5 +1,6 @@
 .ko-pagination {
   border-top: 1px solid rgba(126, 146, 160, 0.2);
+  margin-top: rem-calc(12);
 
   &__list {
     @include xy-grid(horizontal, true);

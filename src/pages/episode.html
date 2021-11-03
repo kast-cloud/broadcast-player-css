@@ -5,25 +5,29 @@ selection: Episodes
 <div class="kc-broadcast-app">
     <div class="kc-broadcast-app__inner">
         {{> podcast-info }}
-        <div class="kl-episodes">
-            <div class="kl-episodes__latest">
-                {{> series-cards }}
-                <div class="kc-wdg--latest-episodes">
+        <div class="kl-broadcast-detail">
+            <aside class="kl-broadcast-detail__aside">
+                {{> series-card }}
+                <div class="kc-wdg--series-episodes">
                     <div class="kc-wdg__sec--hdr">
-                        <h2 class="kc-wdg__hdg">More episodes in this series</h2>
+                        <h2 class="kc-wdg__hdg">More episodes from this series</h2>
                     </div>
                     <div class="kc-wdg__sec--bdy">
-                        {{#each_upto episodes 3}}
-                        {{> episode-item }}
-                        {{/each_upto}}
+                        <ul class="kc-episode-list">
+                            {{#each_upto episodes 3}}
+                            <li>{{> episode-sum }}</li>
+                            {{/each_upto}}
+                        </ul>
                     </div>
                     <div class="kc-wdg__sec--ftr">
-                        <a href="episodes.html" class="ko-more">View all episodes in this series<i
+                        <a href="episodes.html" class="ko-more">View all episodes<i
                                 class="ki-chevron-alt-right"></i></a>
                     </div>
                 </div>
-            </div>
-            <div class="kl-episodes__series">
+                {{> subscribe }}
+            </aside>
+            <div class="kl-broadcast-detail__line"></div>
+            <div class="kl-broadcast-detail__main">
                 <h1>Episode page</h1>
                 <div class="callout warning">
                     <p>Yet to code.</p>

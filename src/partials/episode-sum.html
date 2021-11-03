@@ -1,19 +1,41 @@
-<tr onclick="location.href='episode.html'">
-    <td class="kc-episode-sum__num">
-        0{{ @index}}
-    </td>
-    <td class="kc-episode-sum__title">
-        {{ name }} - {{ author }}
-    </td>
-    <td class="kc-episode-sum__date">
-        <time datetime="{{ date }} {{ time }}" class="ko-datetime">
-            {{ date }} <span class="kl-dt-separator">{{ time }}</span>
-        </time>
-    </td>
-    <td class="kc-episode-sum__time">
-        <i class="ki-clock"></i> {{ duration }} min
-    </td>
-    <td class="kc-episode-sum__done kc-episode-sum__done--{{ listened }}">
-        <i class="ki-headphones"></i><span class="ku-show-sr">{{ listened }}</span>
-    </td>
-</tr>
+<a href="episode.html" class="kc-episode-sum">
+    <article class="kc-episode-sum__inner">
+        <div class="kc-episode-sum__img-wrp">
+            <img src="{{ imageUrl }}" alt="{{ name }}" class="kc-episode-sum__img">
+        </div>
+        <div class="kc-episode-sum__txt">
+            <h1 class="kc-episode-sum__title">{{ name }}</h1>
+            <dl class="ko-keyvalue ko-keyvalue--value-only kc-episode-sum__info">
+                <div class="kc-episode-sum__released">
+                    <dt>Recorded</dt>
+                    <dd>
+                        <time datetime="{{ date }} {{ time }}" class="ko-datetime">
+                            {{ date }} <span class="kl-dt-separator">{{ time }}</span></time>
+                    </dd>
+                </div>
+                <div class="kc-episode-sum__author">
+                    <dt>Author</dt>
+                    <dd>{{ author }}</dd>
+                </div>
+                {{#if series}}
+                <div class="kc-episode-sum__series">
+                    <dt>Series</dt>
+                    <dd>{{ series }}</dd>
+                </div>
+                {{/if}}
+                <div class="kc-episode-sum__location">
+                    <dt>Location</dt>
+                    <dd>
+                        <span class="ko-badge ko-badge--location">Kedron</span>
+                    </dd>
+                </div>
+                <div class="kc-episode-sum__duration">
+                    <dt>Duration</dt>
+                    <dd>
+                        <i class="ki-clock"></i> {{ duration }} min
+                    </dd>
+                </div>
+            </dl>
+        </div>
+    </article>
+</a>

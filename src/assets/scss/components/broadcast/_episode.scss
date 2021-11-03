@@ -1,10 +1,121 @@
 .kc-episode-item {
     display: block;
-    border-top: 1px solid rgba(126, 146, 160, 0.2);
+    text-decoration: none;
+    color: $body-font-color;
+    padding: rem-calc(12 8);
+    transition: background-color 0.2s;
+
+    &:hover,
+    &:focus {
+        background-color: #f4f7f7;
+        cursor: pointer;
+        color: inherit;
+    }
+
+    dt, dd
+    {
+        margin: 0;
+    }
+
+    &__inner {
+        font-size: rem-calc(14);
+        align-items: center;
+        @include xy-grid(horizontal,false);
+        // display: grid;
+        // grid-template-columns: max-content auto max-content;
+        // column-gap: rem-calc(20);
+
+        > *
+        {
+            @include xy-cell-base(shrink);
+        }
+    }
+
+    &__img {
+        width: rem-calc(64);
+        border-radius: $button-radius;
+        margin-right: rem-calc(20);
+    }
+    &__txt
+    {
+        @include xy-cell-base(auto);
+    }
+
+    &__title {
+        @extend .h3;
+        font-size: rem-calc(16);
+        margin-bottom: rem-calc(2);
+    }
+    &__info {
+        font-size: rem-calc(12);
+        @include xy-grid(horizontal,false);
+
+        > div
+        {
+            margin: 0 rem-calc(21);
+
+            &:last-child
+            {
+                margin-right: 0;
+            }
+        }
+    }
+    &__released {
+        color: #5b5956;
+
+        .kl-dt-separator {
+            text-transform: uppercase;
+        }
+    }
+    &__author {
+        display: inline-block;
+    }
+    &__series {
+        display: inline-block;
+        dd {
+            &::before {
+                content: "·";
+                display: inline-block;
+                font-size: 150%;
+                vertical-align: middle;
+                position: relative;
+                top: -0.1em;
+                line-height: 0;
+                margin-left: 0.4ch;
+                margin-right: 0.5ch;
+            }
+        }
+    }
+    &__location {
+    }
+    &__duration {
+    }
+    &__done
+    {
+        color: $medium-gray;
+
+        &--true
+        {
+            color: $kast-green;
+        }
+    }
+
+    i {
+        @extend .broadcast-icon
+    }
+}
+
+.kc-episode-sum {
+    display: block;
     text-decoration: none;
     color: $body-font-color;
     padding: rem-calc(16 8);
     transition: background-color 0.2s;
+
+    dt, dd
+    {
+        margin: 0;
+    }
 
     &:hover,
     &:focus {
@@ -20,19 +131,12 @@
         font-size: rem-calc(12);
     }
 
-    &:first-child {
-        border-top: none;
-    }
-
     &__title {
         @extend .h3;
         font-size: rem-calc(16);
         margin-bottom: rem-calc(2);
     }
     &__info {
-        dd {
-            margin-bottom: 0;
-        }
         div {
             margin-top: rem-calc(6);
 
@@ -55,7 +159,6 @@
         clear: left;
     }
     &__series {
-        //display: inline;
         dd {
             &::before {
                 content: "·";
@@ -65,7 +168,8 @@
                 position: relative;
                 top: -0.1em;
                 line-height: 0;
-                margin: 0 0.25em;
+                margin-left: 0.25em;
+                margin-right: 0.25em;
             }
         }
     }
@@ -78,21 +182,6 @@
         float: right;
     }
 
-    // &__info {
-    //     @include flex;
-    //     @include flex-align(justify, middle);
-    //     margin-top: rem-calc(6);
-    //     dd,
-    //     dt {
-    //         margin-bottom: 0;
-    //     }
-    // }
-    // &__txt {
-    //     @include flex;
-    //     @include flex-align(center, null);
-    //     @include flex-direction(column);
-    // }
-
     &__img {
         width: rem-calc(114);
         border-radius: $button-radius;
@@ -103,9 +192,11 @@
     }
 }
 
-// Table structure
-.kc-episode-sum {
+// Episodes in table list
+
+.ko-episode-tbl {
     border: none;
+    margin-bottom: rem-calc(8);
     thead,
     tbody,
     tfoot {
@@ -150,10 +241,10 @@
         width: 0.1%;
         white-space: nowrap;
 
-        &.kc-episode-sum__num {
+        &.ko-episode-tbl__num {
             color: $medium-gray;
         }
-        &.kc-episode-sum__title {
+        &.ko-episode-tbl__title {
             font-size: rem-calc(14);
             color: $header-color;
             font-weight: $header-font-weight;
@@ -174,16 +265,17 @@
     }
 }
 
-.kc-episode-list {
-    display: grid;
-    grid-gap: rem-calc(24);
-    grid-template-columns: 3fr 9fr;
+.kc-episode-list
+{
+    list-style: none;
+    margin: 0;
 
-    &__hdg {
-        @extend .kc-wdg__hdg;
-        margin-bottom: rem-calc(10);
-    }
-    &__sub-hdg {
-        font-size: rem-calc(14);
+    li
+    {
+        border-top: 1px solid rgba(126, 146, 160, 0.2);
+
+        &:first-child {
+            border-top: none;
+        }
     }
 }

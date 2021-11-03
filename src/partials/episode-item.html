@@ -5,35 +5,45 @@
         </div>
         <div class="kc-episode-item__txt">
             <h1 class="kc-episode-item__title">{{ name }}</h1>
-            <dl class="ko-keyvalue ko-keyvalue--value-only kc-episode-item__info">
-                <div class="kc-episode-item__released">
-                    <dt>Recorded</dt>
-                    <dd>
-                        <time datetime="{{ date }} {{ time }}" class="ko-datetime">
-                            {{ date }} <span class="kl-dt-separator">{{ time }}</span></time>
-                    </dd>
-                </div>
+            <dl class="ko-keyvalue ko-keyvalue--value-only">
                 <div class="kc-episode-item__author">
                     <dt>Author</dt>
                     <dd>{{ author }}</dd>
                 </div>
+                {{#if series}}
                 <div class="kc-episode-item__series">
                     <dt>Series</dt>
                     <dd>{{ series }}</dd>
                 </div>
-                <div class="kc-episode-item__location">
-                    <dt>Location</dt>
-                    <dd>
-                        <span class="ko-badge ko-badge--location">Kedron</span>
-                    </dd>
-                </div>
-                <div class="kc-episode-item__duration">
-                    <dt>Duration</dt>
-                    <dd>
-                        <i class="ki-clock"></i> {{ duration }} min
-                    </dd>
-                </div>
+                {{/if}}
             </dl>
         </div>
+        <dl class="ko-keyvalue ko-keyvalue--value-only kc-episode-item__info">
+            <div class="kc-episode-item__released">
+                <dt>Recorded</dt>
+                <dd>
+                    <time datetime="{{ date }} {{ time }}" class="ko-datetime">
+                        {{ date }} <span class="kl-dt-separator">{{ time }}</span></time>
+                </dd>
+            </div>
+            <div class="kc-episode-item__location">
+                <dt>Location</dt>
+                <dd>
+                    <span class="ko-badge ko-badge--location">Kedron</span>
+                </dd>
+            </div>
+            <div class="kc-episode-item__duration">
+                <dt>Duration</dt>
+                <dd>
+                    <i class="ki-clock"></i> {{ duration }} min
+                </dd>
+            </div>
+            <div class="kc-episode-item__done kc-episode-item__done--{{ listened }}">
+                <dt>Listened</dt>
+                <dd>
+                    <i class="ki-headphones"></i><span class="ku-show-sr">{{ listened }}</span>
+                </dd>
+            </div>
+        </dl>
     </article>
 </a>

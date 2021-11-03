@@ -1,0 +1,19 @@
+<tr onclick="location.href='episode.html'">
+    <td class="ko-episode-tbl__num">
+        0{{ @index}}
+    </td>
+    <td class="ko-episode-tbl__title">
+        {{ name }} - {{ author }}
+    </td>
+    <td class="ko-episode-tbl__date">
+        <time datetime="{{ date }} {{ time }}" class="ko-datetime">
+            {{ date }} <span class="kl-dt-separator">{{ time }}</span>
+        </time>
+    </td>
+    <td class="ko-episode-tbl__time">
+        <i class="ki-clock"></i> {{ duration }} min
+    </td>
+    <td class="ko-episode-tbl__done ko-episode-tbl__done--{{ listened }}">
+        <i class="ki-headphones"></i><span class="ku-show-sr">{{ listened }}</span>
+    </td>
+</tr>

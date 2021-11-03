@@ -3,11 +3,13 @@
         <h2 class="kc-wdg__hdg">Latest episodes</h2>
     </div>
     <div class="kc-wdg__sec--bdy">
+        <ul class="kc-episode-list">
         {{#each_upto episodes 3}}
-        {{> episode-item }}
+        <li>{{> episode-sum }}</li>
         {{/each_upto}}
+        </ul>
     </div>
     <div class="kc-wdg__sec--ftr">
-        <a href="episodes.html" class="ko-more">View all episodes <i class="ki-chevron-alt-right"></i></a>
+        <a href="episodes.html" class="ko-more">View all episodes<i class="ki-chevron-alt-right"></i></a>
     </div>
 </div>
