@@ -1,5 +1,4 @@
-.kl-episodes
-{
+.kl-episodes {
     margin-top: rem-calc(48);
     margin-bottom: rem-calc(40);
     display: grid;
@@ -8,23 +7,31 @@
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto;
 
-
-    &__latest
-    {
-        grid-column: 1 / span 4 ;
+    &__latest {
+        grid-column: 1 / span 4;
     }
-    &__series
-    {
+    &__series {
         grid-column: 5 / -1;
     }
-    &__subscribe
-    {
+    &__subscribe {
         grid-column: 1 / -1;
         grid-row: 2;
     }
-    &__all
-    {
+    &__all {
         grid-column: 1 / -1;
         grid-row: 3;
+    }
+}
+
+.broadcast-icon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    margin-right: rem-calc(2);
+
+    &.ki-headphones
+    {
+        margin: 0;
+        top: 0;
     }
 }

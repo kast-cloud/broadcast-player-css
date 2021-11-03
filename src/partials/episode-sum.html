@@ -1,6 +1,6 @@
 <tr onclick="location.href='episode.html'">
     <td class="kc-episode-sum__num">
-        {{ @index }}
+        0{{ @index}}
     </td>
     <td class="kc-episode-sum__title">
         {{ name }} - {{ author }}
@@ -13,7 +13,7 @@
     <td class="kc-episode-sum__time">
         <i class="ki-clock"></i> {{ duration }} min
     </td>
-    <td class="kc-episode-sum__done">
-        <i class="ki-headphones"></i> {{ listened }}
+    <td class="kc-episode-sum__done kc-episode-sum__done--{{ listened }}">
+        <i class="ki-headphones"></i><span class="ku-show-sr">{{ listened }}</span>
     </td>
 </tr>

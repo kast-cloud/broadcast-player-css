@@ -8,7 +8,8 @@
         "time": "8:30 am",
         "duration": "33",
         "location": "Brisbane",
-        "imageUrl": "https://placeimg.com/288/288/nature"
+        "imageUrl": "https://placeimg.com/288/288/nature",
+        "listened": "false"
     },
     {
         "name": "Walk on Water",
@@ -19,7 +20,8 @@
         "time": "8:30 am",
         "duration": "28",
         "location": "Brisbane",
-        "imageUrl": "https://placeimg.com/288/288/nature"
+        "imageUrl": "https://placeimg.com/288/288/nature",
+        "listened": "true"
     },
     {
         "name": "Breakthrough",
@@ -30,7 +32,8 @@
         "time": "8:30 am",
         "duration": "30",
         "location": "Brisbane",
-        "imageUrl": "https://placeimg.com/288/288/nature"
+        "imageUrl": "https://placeimg.com/288/288/nature",
+        "listened": "false"
     },
     {
         "name": "Faith in the Dark",
@@ -41,7 +44,8 @@
         "time": "8:30 am",
         "duration": "33",
         "location": "Brisbane",
-        "imageUrl": "https://placeimg.com/288/288/nature"
+        "imageUrl": "https://placeimg.com/288/288/nature",
+        "listened": "true"
     },
     {
         "name": "Faith in the Dark",
@@ -52,6 +56,7 @@
         "time": "8:30 am",
         "duration": "33",
         "location": "Brisbane",
-        "imageUrl": "https://placeimg.com/288/288/nature"
+        "imageUrl": "https://placeimg.com/288/288/nature",
+        "listened": "false"
     }
 ]

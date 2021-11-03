@@ -5,19 +5,25 @@
             <img src="https://placeimg.com/400/400/nature" alt="" class="kc-series-item__img">
             <div class="kc-series-item__txt">
                 <h1 class="kc-series-item__title">Faith Lives Here</h1>
-                <dl class="ko-keyvalue ko-keyvalue--value-only ko-keyvalue--inline kc-series-item__info">
-                    <dt>Episodes in series</dt>
-                    <dd>
-                        <i class="ki-info"></i> 5 episodes
-                    </dd>
-                    <dt>Total time</dt>
-                    <dd>
-                        <i class="ki-clock"></i> 3h 35min
-                    </dd>
-                    <dt>Listened</dt>
-                    <dd>
-                        <i class="ki-headphones"></i><span class="show-for-sr">no</span>
-                    </dd>
+                <dl class="ko-keyvalue ko-keyvalue--value-only kc-series-item__info">
+                    <div class="kc-series-card__episodes">
+                        <dt>Episodes in series</dt>
+                        <dd>
+                            <i class="ki-info"></i> 5 episodes (complete)
+                        </dd>
+                    </div>
+                    <div class="kc-series-card__time">
+                        <dt>Total time</dt>
+                        <dd>
+                            <i class="ki-clock"></i> 3h 35min
+                        </dd>
+                    </div>
+                    <div class="kc-series-card__done kc-series-card__done--{{ listened }}">
+                        <dt>Listened</dt>
+                        <dd>
+                            <i class="ki-headphones"></i><span class="ku-show-sr">{{ listened }}</span>
+                        </dd>
+                    </div>
                 </dl>
                 <p>Series summary a quick example text to build on the card title and make up the bulk of the card's
                     content.</p>
@@ -35,7 +41,7 @@
                             Title / Author
                         </th>
                         <th>
-                            Recorded on
+                            Recorded
                         </th>
                         <th>
                             Duration
