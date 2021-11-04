@@ -1,19 +1,27 @@
-.ko-more
+.ko-more, .ko-back
 {
+    color: $header-color;
     font-size: rem-calc(14);
 
     .ki-chevron-alt-right, .ki-chevron-alt-left
     {
+        color: $kast-green;
         font-size: 64%;
         margin-left: rem-calc(4);
         top: 0;
         transform: left .2s, right .2s;
         position: relative;
     }
+    .ki-chevron-alt-left
+    {
+        margin-right: rem-calc(4);
+        margin-left: 0;
+    }
 
     &:hover,
     &:focus
     {
+
         .ki-chevron-alt-right
         {
             left: 2px;
@@ -23,4 +31,8 @@
             right: 2px;
         }
     }
+}
+.ko-back
+{
+    font-size: inherit;
 }

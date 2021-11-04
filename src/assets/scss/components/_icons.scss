@@ -1,3 +1,4 @@
+$ki-cross: "\e922";
 $ki-download: "\e91f";
 $ki-clock: "\e920";
 $ki-headphones: "\e921";
@@ -80,7 +81,11 @@ $ki-twitter: "\f099";
     [class*=" ki-"] {
         @include kast-icons-base;
     }
-
+    .ki-cross{
+        &:before {
+            content: $ki-cross;
+        }
+    }
     .ki-download {
         &:before {
             content: $ki-download;

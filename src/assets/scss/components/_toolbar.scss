@@ -1,0 +1,59 @@
+.ko-toolbar {
+    border-top: rem-calc(1) solid $kast-white;
+    padding-top: rem-calc(12);
+    padding-bottom: rem-calc(11);
+    margin-bottom: 0;
+    @include flex;
+    @include flex-align(center, middle);
+    border-bottom: 1px solid rgba(126, 146, 160, 0.2);
+
+    @include breakpoint(medium)
+    {
+        border-top: 0;
+    }
+
+    .kc-live-next &
+    {
+        padding-left: rem-calc(9);
+        padding-right: rem-calc(9);
+    }
+    & &__btn {
+        @include button-base;
+        border: 0;
+        text-transform: uppercase;
+        margin: 0 rem-calc(12);
+        font-size: rem-calc(10);
+        color: $darker-gray;
+        min-width: rem-calc(44);
+        background-color: transparent;
+        padding: rem-calc(5);
+
+        &:hover, &:active
+        {
+            color: $black;
+        }
+
+        &.is-active
+        {
+            color: $kast-green;
+            position: relative;
+
+            &::after
+            {
+                position: absolute;
+                bottom: rem-calc(-12);
+                //@include triangle(top,rem-calc(8),rem-calc(8),$kast-green);
+                transform: translateX(-50%);
+                left: 50%;
+            }
+        }
+    }
+    &__ico {
+        font-size: rem-calc(14);
+        margin: 0 auto rem-calc(8);
+        display: inline-block;
+    }
+    &__txt {
+        display: block;
+    }
+}

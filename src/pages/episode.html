@@ -6,6 +6,9 @@ selection: Episodes
     <div class="kc-broadcast-app__inner">
         {{> podcast-info }}
         <div class="kl-broadcast-detail">
+            <div class="kl-broadcast-detail__hdr">
+                <a href="episodes.html#list" class="ko-back"><i class="ki-chevron-alt-left"></i>Back to list</a>
+            </div>
             <aside class="kl-broadcast-detail__aside">
                 {{> series-card }}
                 <div class="kc-wdg--series-episodes">
@@ -20,7 +23,7 @@ selection: Episodes
                         </ul>
                     </div>
                     <div class="kc-wdg__sec--ftr">
-                        <a href="episodes.html" class="ko-more">View all episodes<i
+                        <a href="episodes.html#list" class="ko-more">View all episodes<i
                                 class="ki-chevron-alt-right"></i></a>
                     </div>
                 </div>
@@ -28,11 +31,101 @@ selection: Episodes
             </aside>
             <div class="kl-broadcast-detail__line"></div>
             <div class="kl-broadcast-detail__main">
-                <h1>Episode page</h1>
-                <div class="callout warning">
-                    <p>Yet to code.</p>
-                    <a href="index.html" class="ko-button">Go back</a>
-                </div>
+                <article class="kc-episode">
+                    {{#each_upto episodes 1}}
+                    <header class="kc-episode__hdr">
+                        <div class="kc-episode__img-wrp">
+                            <img src="{{ imageUrl }}" alt="{{ name }}" class="kc-episode__img">
+                        </div>
+                        <div class="kc-episode__txt">
+                            <h1 class="kc-episode__title">{{ name }}</h1>
+                            <dl class="ko-keyvalue ko-keyvalue--value-only">
+                                <div class="kc-episode__author">
+                                    <dt>Author</dt>
+                                    <dd>{{ author }}</dd>
+                                </div>
+                                {{#if series}}
+                                <div class="kc-episode__series">
+                                    <dt>Series</dt>
+                                    <dd>{{ series }}</dd>
+                                </div>
+                                {{/if}}
+                            </dl>
+                        </div>
+                        <dl class="ko-keyvalue ko-keyvalue--value-only kc-episode__info">
+                            <div class="kc-episode__released">
+                                <dt>Recorded</dt>
+                                <dd>
+                                    <time datetime="{{ date }} {{ time }}" class="ko-datetime">
+                                        {{ date }} <span class="kl-dt-separator">{{ time }}</span></time>
+                                </dd>
+                            </div>
+                            <div class="kc-episode__location">
+                                <dt>Location</dt>
+                                <dd>
+                                    <span class="ko-badge ko-badge--location">Kedron</span>
+                                </dd>
+                            </div>
+                            <div class="kc-episode__duration">
+                                <dt>Duration</dt>
+                                <dd>
+                                    <i class="ki-clock"></i> {{ duration }} min
+                                </dd>
+                            </div>
+                            <div class="kc-episode__done kc-episode__done--{{ listened }}">
+                                <dt>Listened</dt>
+                                <dd>
+                                    <i class="ki-headphones"></i><span class="ku-show-sr">{{ listened }}</span>
+                                </dd>
+                            </div>
+                        </dl>
+                    </header>
+                    {{/each_upto}}
+                    <div class="kc-series__media">
+                        <audio id="player" class="ko-player--audio" controls>
+                            <source
+                                src="https://www.city-lights.church/media/episodes/4nxebg7wcehdf181t4tzedfvcw/4ttzgye3d1cystmq6gwf6dh9m3/2021-10-24t10-15-00_4z6wsa5k5k4me6bdtpm52rbtxx.mp3"
+                                type="audio/mpeg" />
+                            <p class="vjs-no-js">
+                                To view this video please enable JavaScript, and consider upgrading to a
+                                web browser that
+                                <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5
+                                    video</a>
+                            </p>
+                        </audio>
+                    </div>
+                    <div class="ko-toolbar">
+                        <button class="ko-toolbar__btn"><i class="ki-prayer ko-toolbar__ico"></i><span class="ko-toolbar__txt">Prayer</span></button> 
+                        <button class="ko-toolbar__btn"><i class="ki-connect ko-toolbar__ico"></i> <span class="ko-toolbar__txt">Connect</span></button>
+                        <button class="ko-toolbar__btn"><i class="ki-cross ko-toolbar__ico"></i> <span class="ko-toolbar__txt">Respond</span></button> 
+                        <button class="ko-toolbar__btn"><i class="ki-give ko-toolbar__ico"></i> <span class="ko-toolbar__txt">Give</span></button>
+                        <button class="ko-toolbar__btn"><i class="ki-share ko-toolbar__ico"></i> <span class="ko-toolbar__txt">Share</span></button>
+                        <a href="https://www.city-lights.church/media/episodes/4nxebg7wcehdf181t4tzedfvcw/4ttzgye3d1cystmq6gwf6dh9m3/2021-10-24t10-15-00_4z6wsa5k5k4me6bdtpm52rbtxx.mp3" class="ko-toolbar__btn" download><i class="ki-download ko-toolbar__ico"></i> <span class="ko-toolbar__txt">Download</span></a>
+                    </div>
+                    <div class="kc-episode__bdy">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse neque ligula,
+                            rhoncus et quam a, tristique congue lectus. Donec vitae elit id elit laoreet tincidunt.
+                            Suspendisse sodales sem est, eget lacinia lectus faucibus eu. Fusce sed pretium lacus,
+                            et pretium nunc. Suspendisse imperdiet, nulla vel eleifend consectetur, erat augue
+                            finibus mauris, vitae cursus est libero a diam. Pellentesque ut magna felis. Phasellus
+                            lacus dolor, interdum ac sagittis nec, volutpat nec turpis.
+                        </p>
+                        <p>
+                            Nunc sagittis felis at nibh mattis vehicula. Suspendisse dignissim imperdiet nunc, id
+                            aliquam ante molestie porttitor. Vivamus hendrerit justo vel urna maximus suscipit. Duis
+                            ut augue felis. Phasellus lobortis dapibus accumsan. In dui nisl, convallis at purus
+                            consectetur, dictum laoreet metus. Ut lobortis sed quam sit amet elementum. Praesent
+                            cursus tristique sem nec convallis.
+                        </p>
+                        <ul class="kc-episode__notes">
+                            <li><a href="#"><i class="ki-download"></i>Study notes (PDF, 1.2 Mb)</a></li>
+                            <li> <a href="#"><i class="ki-download"></i>Presentation (PDF, 1.3 Mb)</a></li>
+                        </ul>
+                    </div>
+                    <div class="kc-episode__authors">
+                        {{> author}}
+                    </div>
+                </article>
             </div>
         </div>
     </div>

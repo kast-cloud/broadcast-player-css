@@ -6,9 +6,9 @@
     <div class="kc-broadcast-list__bdy">
         {{> search-bar }}
         <ul class="kc-episode-list kc-episode-list--{{ modification }}">
-            {{#each_upto episodes 6}}
+            {{#each episodes}}
             <li>{{> episode-item }}</li>
-            {{/each_upto}}
+            {{/each}}
         </ul>
         {{> pagination }}
     </div>

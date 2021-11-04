@@ -5,41 +5,65 @@ selection: Episodes
 <div class="kc-broadcast-app">
     <div class="kc-broadcast-app__inner">
         {{> podcast-info }}
-        <div class="kl-episodes">
-            <div class="kl-episodes__latest">
+        <div class="kl-broadcast-detail">
+            <div class="kl-broadcast-detail__hdr">
+                <a href="index.html" class="ko-back"><i class="ki-chevron-alt-left"></i>Back to list</a>
             </div>
-            <div class="kl-episodes__series">
-                <article class="kc-series-item">
-                    <header class="kc-series-item__hdr">
-                        <img src="https://placeimg.com/400/400/nature" alt="" class="kc-series-item__img">
-                        <div class="kc-series-item__txt">
-                            <h1 class="kc-series-item__title">Faith Lives Here</h1>
-                            <dl class="ko-keyvalue ko-keyvalue--value-only ko-keyvalue--inline kc-series-item__info">
-                                <dt>Episodes in series</dt>
-                                <dd>
-                                    <i class="ki-info"></i> 5 episodes
-                                </dd>
-                                <dt>Total time</dt>
-                                <dd>
-                                    <i class="ki-clock"></i> 3h 35min
-                                </dd>
-                                <dt>Listened</dt>
-                                <dd>
-                                    <i class="ki-headphones"></i><span class="show-for-sr">no</span>
-                                </dd>
+            <aside class="kl-broadcast-detail__aside">
+                {{> subscribe }}
+            </aside>
+            <div class="kl-broadcast-detail__line"></div>
+            <div class="kl-broadcast-detail__main">
+                <article class="kc-series">
+                    <header class="kc-series__hdr">
+                        <img src="https://placeimg.com/400/400/nature" alt="Faith Lives Here"
+                            class="kc-series__img">
+                        <div class="kc-series__txt">
+                            <h1 class="kc-series__title">Faith Lives Here</h1>
+                            <dl class="ko-keyvalue ko-keyvalue--value-only kc-series__info">
+                                <div class="kc-series__episodes">
+                                    <dt>Episodes in series</dt>
+                                    <dd>
+                                        <i class="ki-info"></i> 5 episodes (complete)
+                                    </dd>
+                                </div>
+                                <div class="kc-series__time">
+                                    <dt>Total time</dt>
+                                    <dd>
+                                        <i class="ki-clock"></i> 3h 35min
+                                    </dd>
+                                </div>
+                                <div class="kc-series__done kc-series__done--{{ listened }}">
+                                    <dt>Listened</dt>
+                                    <dd>
+                                        <i class="ki-headphones"></i><span class="ku-show-sr">{{ listened }}</span>
+                                    </dd>
+                                </div>
                             </dl>
-                            <p>Series summary a quick example text to build on the card title and make up the bulk of
-                                the card's
-                                content.</p>
-                            <a href="series.html" class="ko-more">Learn more<i class="ki-chevron-alt-right"></i></a>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse neque ligula,
+                                rhoncus et quam a, tristique congue lectus. Donec vitae elit id elit laoreet tincidunt.
+                                Suspendisse sodales sem est, eget lacinia lectus faucibus eu. Fusce sed pretium lacus,
+                                et pretium nunc. Suspendisse imperdiet, nulla vel eleifend consectetur, erat augue
+                                finibus mauris, vitae cursus est libero a diam. Pellentesque ut magna felis. Phasellus
+                                lacus dolor, interdum ac sagittis nec, volutpat nec turpis.
+                            </p>
+                            <p>
+                                Nunc sagittis felis at nibh mattis vehicula. Suspendisse dignissim imperdiet nunc, id
+                                aliquam ante molestie porttitor. Vivamus hendrerit justo vel urna maximus suscipit. Duis
+                                ut augue felis. Phasellus lobortis dapibus accumsan. In dui nisl, convallis at purus
+                                consectetur, dictum laoreet metus. Ut lobortis sed quam sit amet elementum. Praesent
+                                cursus tristique sem nec convallis.
+                            </p>
                         </div>
                     </header>
+                    <div class="kc-series__bdy">
+                        <ul class="kc-episode-list kc-episode-list--{{ modification }}">
+                            {{#each_upto episodes 6}}
+                            <li>{{> episode-item }}</li>
+                            {{/each_upto}}
+                        </ul>
+                    </div>
                 </article>
-                <h1>Series page</h1>
-                <div class="callout warning">
-                    <p>Yet to code.</p>
-                    <a href="index.html" class="ko-button">Go back</a>
-                </div>
             </div>
         </div>
     </div>

@@ -28,6 +28,66 @@
     }
 }
 
+.kc-series-item, .kc-series {
+    &__hdr {
+        display: grid;
+        grid-template-columns: max-content auto;
+        column-gap: rem-calc(32);
+        margin-bottom: rem-calc(8);
+
+        p {
+            font-size: rem-calc(14);
+        }
+    }
+    &__txt {
+        @include flex;
+        @include flex-align(center, null);
+        @include flex-direction(column);
+
+        > *:last-child
+        {
+            margin-bottom: 0;
+        }
+    }
+
+    &__img {
+        width: rem-calc(200);
+        border-radius: $button-radius;
+    }
+    &__info {
+        font-size: rem-calc(12);
+        color: #5b5956;
+        font-weight: 500;
+
+        div {
+            display: inline-block;
+            margin-right: rem-calc(18);
+        }
+    }
+    &__done
+    {
+        color: $medium-gray;
+
+        &--true
+        {
+            color: $kast-green;
+        }
+    }
+    i {
+        @extend .broadcast-icon;
+    }
+}
+
+.kc-series
+{
+    &__hdr
+    {
+        border-bottom: 1px solid rgba(126, 146, 160, 0.2);
+        padding-bottom: rem-calc(32);
+        margin-bottom: rem-calc(32);
+    }
+}
+
 .kc-series-list--cards {
     display: grid;
     row-gap: rem-calc(8);

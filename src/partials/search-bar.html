@@ -9,10 +9,11 @@
                         <span class="show-for-sr">Submit search</span>
                     </button>
                 </div>
-                <input type="search" class="ko-input input-group-field" placeholder="Search series">
+                <input type="search" class="ko-input input-group-field" placeholder="Search {{ selection }}">
             </div>
         </form>
     </div>
+    {{#if viewselect}}
     <div class="kc-search__cell">
         View by:
         <button class="ko-button ko-button--view-type" type="button" data-toggle="view-options">{{ selection }}</button>
@@ -24,4 +25,5 @@
             </ul>
         </div>
     </div>
+    {{/if}}
 </div>

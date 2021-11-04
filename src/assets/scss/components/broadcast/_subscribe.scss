@@ -1,33 +1,46 @@
-.kc-subscribe
-{
+.kc-subscribe {
     background-color: $lighter-gray;
     border-radius: 0.5rem;
-    padding: rem-calc(40 38);
-    display: grid;
-    grid-gap: rem-calc(24);
-    grid-template-columns: max-content max-content auto max-content;
+    padding: rem-calc(40 32);
 
-    &__hdg
-    {
-        @extend .h5;
-        margin-top: rem-calc(11);
+    &__hdg {
+        @extend .kc-wdg__hdg;
     }
-    .ko-input
-    {
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-    .ko-validation
-    {
+    .ko-validation {
         margin-top: $form-spacing * 0.5;
         margin-bottom: 0;
     }
-    .ko-button
-    {
+    .ko-button {
         margin-bottom: 0;
         line-height: 21/16;
         padding-top: $form-spacing * 0.75;
         padding-bottom: $form-spacing * 0.75;
         height: 2.75rem;
+        display: block;
+        width: 100%;
+    }
+
+    &--wide {
+        background-color: $lighter-gray;
+        border-radius: 0.5rem;
+        padding: rem-calc(40 38);
+        display: grid;
+        grid-gap: rem-calc(24);
+        grid-template-columns: max-content max-content auto max-content;
+
+        .kc-subscribe__hdg {
+            @extend .h5;
+            margin-top: rem-calc(11);
+            text-transform: none;
+        }
+
+        .ko-input {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        .ko-button {
+            display: inline-block;
+            width: auto;
+        }
     }
 }

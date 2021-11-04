@@ -1,0 +1,65 @@
+.ko-player--audio {
+    display: none;
+}
+.plyr {
+    .ko-player--audio {
+        display: none;
+    }
+    [data-plyr="play"] {
+        @include box(rem-calc(40), rem-calc(40), true);
+        padding: 0;
+        background-color: $kast-green;
+        color: $white;
+        text-align: center;
+
+        svg {
+            margin: 0 auto;
+            &.icon--not-pressed {
+                position: relative;
+                left: rem-calc(2);
+            }
+        }
+
+        &:hover,
+        &:focus {
+            color: $kast-green;
+            background-color: $white;
+        }
+    }
+    [data-plyr="rewind"],
+    [data-plyr="fast-forward"] {
+        position: relative;
+        font-size: rem-calc(22);
+        @include kast-icon($ki-repeat);
+        &::before {
+            position: relative;
+            top: rem-calc(1);
+        }
+        svg {
+            display: none;
+        }
+        &::after {
+            content: "15";
+            font-size: rem-calc(8);
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 52%;
+        }
+    }
+    [data-plyr="fast-forward"] {
+        &::before {
+            transform: rotateY(180deg);
+        }
+        &::after {
+            left: 48%;
+        }
+    }
+}
+.plyr--audio .plyr__controls {
+    background-color: #f4f7f7;
+    border-radius: $button-radius;
+}
+.plyr__menu {
+    color: $kast-green;
+}

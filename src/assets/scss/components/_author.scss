@@ -1,0 +1,44 @@
+.ko-author
+{
+    @include xy-grid(horizontal,false);
+    @include flex-align(null,middle);
+    font-size: rem-calc(14);
+    margin-bottom: rem-calc(16);
+
+    > *
+    {
+        @include xy-cell-base(shrink);
+    }
+
+    &__img
+    {
+        width: rem-calc(64);
+        border-radius: $button-radius;
+        margin-right: rem-calc(20);
+    }
+
+    &__info
+    {
+        @include xy-cell-base(auto);
+    }
+
+    &__profile
+    {
+        :last-child
+        {
+            margin-bottom: 0;
+        }
+    }
+
+    &__name
+    {
+        @extend .h5;
+        margin-bottom: rem-calc(2);
+    }
+
+    + .ko-author
+    {
+        border-top: 1px solid rgba(126, 146, 160, 0.2);
+        padding-top: rem-calc(16);
+    }
+}

@@ -10,6 +10,7 @@ $podcast-info-gutters: (
     padding-top: rem-calc(40);
     padding-bottom: rem-calc(40);
     border-bottom: 1px solid rgba(126, 146, 160, 0.2);
+    align-items: center;
 
     &__img {
         border-radius: $button-radius;

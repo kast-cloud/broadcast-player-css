@@ -54,7 +54,9 @@
     display: grid;
     column-gap: rem-calc(30);
     grid-template-columns: minmax(rem-calc(100), rem-calc(346)) 1px auto;
-    grid-template-areas: "aside line main";
+    grid-template-areas: 
+        "hdr hdr hdr"
+        "aside line main";
 
     &__aside {
         grid-area: aside;
@@ -76,6 +78,11 @@
     }
     &__main {
         grid-area: main;
+    }
+    &__hdr
+    {
+        grid-area: hdr;
+        margin-bottom: rem-calc(24);
     }
 }
 
