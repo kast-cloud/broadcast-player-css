@@ -7,7 +7,9 @@
         {{> search-bar }}
         <ul class="kc-episode-list kc-episode-list--{{ modification }}">
             {{#each episodes}}
+            <!-- Create as separate component -->
             <li>{{> episode-item }}</li>
+            <!-- END -->
             {{/each}}
         </ul>
         {{> pagination }}

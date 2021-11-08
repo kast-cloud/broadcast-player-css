@@ -5,7 +5,9 @@
     <div class="kc-wdg__sec--bdy">
         <ul class="kc-episode-list">
         {{#each_upto episodes 3}}
+        <!-- Create as separate component -->
         <li>{{> episode-sum }}</li>
+        <!-- END -->
         {{/each_upto}}
         </ul>
     </div>
